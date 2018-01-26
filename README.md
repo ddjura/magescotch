@@ -16,6 +16,8 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Clone the MageScotch Box [GitHub Repository](https://github.com/joshuaswarren/magescotch)
 - Edit local-bootstrap.sh and replace the sample name and email address with your information
 - Run `vagrant up`
+- Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
+- Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
 - Access Magento 1 at [http://192.168.33.10/magento1/](http://192.168.33.10/magento1/)
 - Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
 - Use your favorite IDE to edit the files in public/magento1, public/magento2 and public/dev
