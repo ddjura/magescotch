@@ -22,22 +22,13 @@ Vagrant.configure("2") do |config|
 
   host = RbConfig::CONFIG['host_os']
 
-  # Give VM 1/4 system memory 
-  if host =~ /darwin/
-    # sysctl returns Bytes and we need to convert to MB
-    mem = `sysctl -n hw.memsize`.to_i / 1024
-    config.vm.synced_folder "./", "/var/www", type:"nfs", mount_options:["nolock,vers=3,tcp,noatime,fsc,rw,actimeo=1"]
-  elsif host =~ /linux/
+  # Give VM 3GB 
     # meminfo shows KB and we need to convert to MB
-    mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i
-    config.vm.synced_folder "./", "/var/www", type:"nfs", mount_options:["nolock,vers=3,udp,noatime,actimeo=1"]  
-  elsif host =~ /mswin|mingw|cygwin/
-    # Windows code via https://github.com/rdsubhas/vagrant-faster
-    mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i / 1024
-    config.vm.synced_folder "./", "/var/www", type:"smb"
-  end
+    config.vm.synced_folder "./", "/var/www"
+    
 
-  mem = mem / 1024 / 4
+  # mem = mem / 1024 / 4
+  mem = 3072
     config.vm.provider "virtualbox" do |v|
   	v.cpus = 2
         v.customize ["modifyvm", :id, "--memory", mem]
