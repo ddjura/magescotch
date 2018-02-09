@@ -31,6 +31,7 @@ Vagrant.configure("2") do |config|
         mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i
     elsif host =~ /mswin|mingw|cygwin/
         mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i / 1024
+    end
       
   mem = mem / 1024 / 4
     config.vm.provider "virtualbox" do |v|
