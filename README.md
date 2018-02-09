@@ -1,6 +1,4 @@
 # TODO 
-+ 1. Add back from original repo settings for different OSs ... 
-+ 2. remove shared folder completely... (Set it so webroot is in /var/www/public/magento2 or magento1  copied from opt)
 - 3. install sample data for magento 2
 
 
@@ -29,6 +27,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Access Magento 1 at [http://192.168.33.10/magento1/](http://192.168.33.10/magento1/)
 - Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
 - Access Magento 2 backend at [http://192.168.33.10/magento2/adminpanel](http://192.168.33.10/magento2/)
+- magento 2 sample code git repo is here [https://github.com/ddjura/Magento2Sample] (https://github.com/ddjura/Magento2Sample)
 - Use your favorite IDE to edit the files in public/magento1, public/magento2 and public/dev
 - Access Mailcatcher at [http://192.168.33.10:1080/](http://192.168.33.10:1080/)
 - Access phpmyadmin at [http://192.168.33.10/phpmyadmin/](http://192.168.33.10/phpmyadmin/)
