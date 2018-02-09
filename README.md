@@ -1,7 +1,7 @@
 # TODO 
-1. Add back from original repo settings for different OSs ... 
-2. remove shared folder completely... (Set it so webroot is in /var/www/public/magento2 or magento1  copied from opt)
-3. install sample data for magento 2
++ 1. Add back from original repo settings for different OSs ... 
++ 2. remove shared folder completely... (Set it so webroot is in /var/www/public/magento2 or magento1  copied from opt)
+- 3. install sample data for magento 2
 
 
 # MageScotch Box
