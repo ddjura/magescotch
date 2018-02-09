@@ -23,6 +23,8 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Edit local-bootstrap.sh and replace the sample name and email address with your information
 - Run `vagrant up`
 - Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
+   try this:
+       phpmemory_limit=-1;find -iname 'php.ini' -exec sed -i 's/memory_limit = .*/memory_limit = '${phpmemory_limit}'/' {} \;
 - Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
 - Access Magento 1 at [http://192.168.34.10/magento1/](http://192.168.34.10/magento1/)
 - Access Magento 2 at [http://192.168.34.10/magento2/](http://192.168.34.10/magento2/)
