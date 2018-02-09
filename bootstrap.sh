@@ -9,6 +9,7 @@ mkdir -p /var/www/public/
 # cp -r /opt/magento1 /var/www/public/
 cp -r /opt/magento2 /var/www/public/
 chown -R vagrant:vagrant /var/www/public/magento2/
+chmod -R 777 /var/www/public/magento2/
 
 # cd /var/www/public/magento1/
 # chmod -R a+rw * 
