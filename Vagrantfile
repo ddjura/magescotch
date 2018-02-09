@@ -22,19 +22,22 @@ Vagrant.configure("2") do |config|
 
   host = RbConfig::CONFIG['host_os']
 
-  # Give VM 3GB 
-    # meminfo shows KB and we need to convert to MB
-    #config.vm.synced_folder "./", "/var/www"
+   #config.vm.synced_folder "./", "/var/www"
     
-
   # mem = mem / 1024 / 4
-  mem = 3072
+    if host =~ /darwin/
+        mem = `sysctl -n hw.memsize`.to_i / 1024
+    elsif host =~ /linux/
+        mem = `grep 'MemTotal' /proc/meminfo | sed -e 's/MemTotal://' -e 's/ kB//'`.to_i
+    elsif host =~ /mswin|mingw|cygwin/
+        mem = `wmic computersystem Get TotalPhysicalMemory`.split[1].to_i / 1024
+      
+  mem = mem / 1024 / 4
     config.vm.provider "virtualbox" do |v|
   	v.cpus = 2
         v.customize ["modifyvm", :id, "--memory", mem]
     end
 
     config.ssh.forward_agent = true
-
 
 end
