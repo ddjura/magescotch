@@ -15,5 +15,5 @@ echo "Running local bootstrap file."
 
 # composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition /var/www/public/m2ee/
 
-
+cd /var/www/public/magento2/ && php bin/magento deploy:mode:set developer
 echo "Completed local bootstrap file."
