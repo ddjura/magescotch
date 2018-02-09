@@ -15,5 +15,7 @@ echo "Running local bootstrap file."
 
 # composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition /var/www/public/m2ee/
 
+adduser vagrant www-data
 cd /var/www/public/magento2/ && php bin/magento deploy:mode:set developer
+php bin/magento admin:user:create --admin-user='marko' --admin-password='acer123' --admin-email='marko.durasic@acer.com' --admin-firstname='Marko' --admin-lastname='Durasic'
 echo "Completed local bootstrap file."
