@@ -24,12 +24,12 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Run `vagrant up`
 - Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
 - Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
-- Access Magento 1 at [http://192.168.33.10/magento1/](http://192.168.33.10/magento1/)
-- Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
+- Access Magento 1 at [http://192.168.34.10/magento1/](http://192.168.34.10/magento1/)
+- Access Magento 2 at [http://192.168.34.10/magento2/](http://192.168.34.10/magento2/)
 - Use your favorite IDE to edit the files in public/magento1, public/magento2 and public/dev
-- Access Mailcatcher at [http://192.168.33.10:1080/](http://192.168.33.10:1080/)
-- Access phpmyadmin at [http://192.168.33.10/phpmyadmin/](http://192.168.33.10/phpmyadmin/)
-- Access adminer at [http://192.168.33.10/adminer/](http://192.168.33.10/adminer/)
+- Access Mailcatcher at [http://192.168.34.10:1080/](http://192.168.34.10:1080/)
+- Access phpmyadmin at [http://192.168.34.10/phpmyadmin/](http://192.168.34.10/phpmyadmin/)
+- Access adminer at [http://192.168.34.10/adminer/](http://192.168.34.10/adminer/)
 
 
 ## Common Tasks
@@ -77,7 +77,7 @@ In a command prompt on your local machine:
 
 `exit`
 
-Your project should now appear when you visit http://192.168.33.10/myproject/
+Your project should now appear when you visit http://192.168.34.10/myproject/
 
 If your project doesn't appear, try clearing any caches, etc. 
 
@@ -94,8 +94,8 @@ Password: dev
 Databases: magento, magento2, dev
 
 ### Admin accounts
-- Magento 1: http://192.168.33.10/magento1/admin_dev/ username: admin password: 64-solution-DISH-into-64
-- Magento 2: http://192.168.33.10/magento2/admin_dev/ username: admin password: 64-solution-DISH-into-64
+- Magento 1: http://192.168.34.10/magento1/admin_dev/ username: admin password: 64-solution-DISH-into-64
+- Magento 2: http://192.168.34.10/magento2/admin_dev/ username: admin password: 64-solution-DISH-into-64
 
 ## Common Issues
 ### Magento 1 sites don't load
@@ -138,8 +138,8 @@ magerun sys:setup:run
 - Z-Ray
 
 ### Magento Stuff
-- Magento 1 ([http://192.168.33.10/magento1/](http://192.168.33.10/magento/)) - files in public/magento1
-- Magento 2 ([http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)) - files in public/magento2
+- Magento 1 ([http://192.168.34.10/magento1/](http://192.168.34.10/magento/)) - files in public/magento1
+- Magento 2 ([http://192.168.34.10/magento2/](http://192.168.34.10/magento2/)) - files in public/magento2
 
 ### Database Stuff
 - MySQL
@@ -237,13 +237,13 @@ vagrant box update
 If you're like me, you prefer to develop at a domain name versus an IP address. If you want to get rid of the some-what ugly IP address, just add a record like the following example to your computer's host file.
 
 ```bash
-192.168.33.10 whatever-i-want.local
+192.168.34.10 whatever-i-want.local
 ```
 
 Or if you want "www" to work as well, do:
 
 ```bash
-192.168.33.10 whatever-i-want.local www.whatever-i-want.local
+192.168.34.10 whatever-i-want.local www.whatever-i-want.local
 ```
 
 Technically you could also use a Vagrant Plugin like [Vagrant Hostmanager][15] to automatically update your host file when you run Vagrant Up. However, the purpose of Scotch Box is to have as little dependencies as possible so that it's always working when you run "vagrant up".
@@ -299,7 +299,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [11]: http://scotch.io/tutorials/php/getting-started-with-laravel-homestead
 [12]: https://www.vagrantup.com/downloads.html
 [13]: https://www.virtualbox.org/wiki/Downloads
-[14]: http://192.168.33.10/
+[14]: http://192.168.34.10/
 [15]: https://github.com/smdahlen/vagrant-hostmanager
 [16]: http://box.scotch.io
 [17]: http://scotch.io/bar-talk/introducing-scotch-box-a-vagrant-lamp-stack-that-just-works
