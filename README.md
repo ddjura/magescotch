@@ -1,5 +1,5 @@
 # TODO 
-- 3. install sample data for magento 2
+-  install sample data for magento 2
 
 
 # MageScotch Box
@@ -34,6 +34,10 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Access adminer at [http://192.168.33.10/adminer/](http://192.168.33.10/adminer/)
 
 
+
+## Issues
+If permission issues then reference this:
+http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-system-perms.html
 ## Common Tasks
 
 ### Add SSH keys to SSH agent so the Vagrant box can use them via SSH agent forwarding
