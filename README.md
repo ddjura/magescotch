@@ -38,6 +38,19 @@ Magescotch is built for general purpose use, but began with conferences and trai
 ## Issues
 If permission issues then reference this:
 http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-system-perms.html
+If pages loading too slow:
+alias mage="php -d memory_limit=-1 -f bin/magento" 
+
+chmod -R 775 pub/static/ var/ pub/media/ &&
+rm -rf var/view_preprocessed/ var/cache/ var/page_cache/ var/tmp/ var/generation/ pub/static/frontend/ ;
+mage cache:clean &
+mage cache:flush &
+mage indexer:reindex &
+mage setup:upgrade &&
+mage setup:static-content:deploy ; mage setup:static-content:deploy -f;
+mage setup:db-data:upgrade &&
+mage dev:source-theme:deploy &&
+chmod -R 775 pub/static/ pub/media/ var/
 ## Common Tasks
 
 ### Add SSH keys to SSH agent so the Vagrant box can use them via SSH agent forwarding
