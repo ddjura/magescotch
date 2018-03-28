@@ -36,6 +36,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
 
 
 ## Issues
+Some common issues listed here, if you have more questions please contact me at ddjura87@gmail.com
 - If permission issues then reference this:
 http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-system-perms.html
 - If pages loading too slow:
