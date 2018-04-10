@@ -24,6 +24,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
    try this:
        phpmemory_limit=-1;find -iname 'php.ini' -exec sed -i 's/memory_limit = .*/memory_limit = '${phpmemory_limit}'/' {} \;
   Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
+- Move out magento cron jobs from root cron tab into vagrant user crontab and set permission again (see Issues section) 
 - Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
 - Access Magento 2 backend at [http://192.168.33.10/magento2/adminpanel](http://192.168.33.10/magento2/)
 - magento 2 sample code git repo is here [https://github.com/ddjura/Magento2Sample]
