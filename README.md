@@ -24,11 +24,10 @@ Magescotch is built for general purpose use, but began with conferences and trai
    try this:
        phpmemory_limit=-1;find -iname 'php.ini' -exec sed -i 's/memory_limit = .*/memory_limit = '${phpmemory_limit}'/' {} \;
   Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
-- Access Magento 1 at [http://192.168.33.10/magento1/](http://192.168.33.10/magento1/)
 - Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
 - Access Magento 2 backend at [http://192.168.33.10/magento2/adminpanel](http://192.168.33.10/magento2/)
 - magento 2 sample code git repo is here [https://github.com/ddjura/Magento2Sample]
-- Use your favorite IDE to edit the files in public/magento1, public/magento2 and public/dev
+- Use your favorite IDE to edit the files in public/magento2
 - Access Mailcatcher at [http://192.168.33.10:1080/](http://192.168.33.10:1080/)
 - Access phpmyadmin at [http://192.168.33.10/phpmyadmin/](http://192.168.33.10/phpmyadmin/)
 - Access adminer at [http://192.168.33.10/adminer/](http://192.168.33.10/adminer/)
