@@ -8,7 +8,7 @@ This is the PHP 7-based version of Magescotch.
 
 This environment is based on the Vagrant base box Magemalt. To request new software to be added, please open an issue on the [Magemalt repository](https://github.com/joshuaswarren/magemalt).
 
-Magescotch is designed to allow you to experiment with Magento (both Magento 1 and Magento 2). While sample installations of M1 and M2 are setup for you, the main purpose of the environment is to give you a place to work on your own projects.
+Magescotch is designed to allow you to experiment with Magento. While sample installations of M2 is setup for you, the main purpose of the environment is to give you a place to work on your own projects.
 
 Magescotch is built for general purpose use, but began with conferences and training sessions in mind. Because of how dodgy conference wifi can be, we include any tool we think you might need in the Magescotch base box. When in doubt, poke around /usr/local/src/ for lots of preloaded goodies. The Composer cache is also prewarmed with a number of Magento-related libraries. This makes Magescotch also especially useful on planes, trains and other situations with little-to-no bandwidth available. 
 
@@ -18,7 +18,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Download and Install [VirtualBox][4] - please make sure you are running the latest version of VirtualBox. 5.1.0 or newer.
 - Install the Vagrant plugins required by running: vagrant plugin install vagrant-hostmanager vagrant-auto_network
 - Clone the ddjura's MageScotch Ubuntu Box [GitHub Repository](https://github.com/ddjura/magescotchubuntu) or Download ZIP if you don't want to contribute to the repo
-- Edit local-bootstrap.sh and replace the sample name and email address with your information and desired admin user
+- Edit local-bootstrap.sh and replace the name and email address with your information and desired admin user
 - Run `vagrant up` (ON windows run `vagrant up --provisioner virtualbox`
 - If website slow: Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
    try this:
@@ -74,42 +74,6 @@ Troubleshoot issues by making sure SSH is aware of your key, by running:
 
 ssh-add -l
 
-### Add a new project to MageScotch
-
-In a command prompt on your local machine:
-
-`cd <MageScotch Directory>/public/`
-
-`git clone <your project> myproject`
-
-`cd myproject`
-
-`cp <wherever you have an SQL dump of your project's database) ./dump.sql`
-
-`vagrant ssh`  (this command connects you to the MageScotch box via SSH)
-
-`mysql -u dev -p`
-
-`(password is dev)`
-
-`CREATE DATABASE myproject;`
-
-`GRANT ALL on myproject.* TO 'dev'@'localhost';`(CTRL-D to exit)
-
-`cd /var/www/public/myproject/`
-
-`mysql -u dev -p myproject < dump.sql`
-
-`exit`
-
-Your project should now appear when you visit http://192.168.33.10/myproject/
-
-If your project doesn't appear, try clearing any caches, etc. 
-
-You can make changes by editing the files in <MageScotch Directory>/public/myproject/ - any changes made there should take effect immediately. 
-
-
-
 ## Credentials
 
 ### Databases / MySQL
@@ -123,27 +87,6 @@ Databases: magento, magento2, dev
 - Magento 2: http://192.168.33.10/magento2/admin_dev/ username: admin password: 64-solution-DISH-into-64
 
 ## Common Issues
-### Magento 1 sites don't load
-
-Magento 1 is not currently compatible with PHP 7. 
-
-If the error is a 500 error and in the Magento exception log you see this error: " PHP Fatal error: Uncaught Error: Function name must be a string...", your project isn't compatible with PHP 7.
-
-If that's the case, run 'vagrant ssh' to connect to MageScotch and cd to the directory your project is installed in and run the following commands: 
-
-#### For Magento 1.9.3 and newer
-
-modman init
-modman clone https://github.com/Inchoo/Inchoo_PHP7
-magerun cache:flush
-magerun sys:setup:run
-
-#### For Magento 1.9.2.4 and older
-
-modman init
-modman clone https://github.com/Inchoo/Inchoo_PHP7 -b '1.9.2.4'
-magerun cache:flush
-magerun sys:setup:run
 
 ## Features
 ### System Stuff
@@ -163,7 +106,6 @@ magerun sys:setup:run
 - Z-Ray
 
 ### Magento Stuff
-- Magento 1 ([http://192.168.33.10/magento1/](http://192.168.33.10/magento/)) - files in public/magento1
 - Magento 2 ([http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)) - files in public/magento2
 
 ### Database Stuff
