@@ -17,7 +17,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Download and Install [Vagrant][3] - please make sure you are running the latest version of Vagrant. 1.8.7 or newer. 
 - Download and Install [VirtualBox][4] - please make sure you are running the latest version of VirtualBox. 5.1.0 or newer.
 - Install the Vagrant plugins required by running: vagrant plugin install vagrant-hostmanager vagrant-auto_network
-- Clone the ddjura's MageScotch Ubuntu Box [GitHub Repository](https://github.com/ddjura/magescotchubuntu) or Download ZIP if you don't want to contribute to the repo
+- Clone the this MageScotch Ubuntu Box [GitHub Repository](https://github.com/ddjura/magescotchubuntu) or Download ZIP if you don't want to contribute to the repo
 - Edit local-bootstrap.sh and replace the name and email address with your information and desired admin user
 - Run `vagrant up` (ON windows run `vagrant up --provisioner virtualbox`
 - If website slow: Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
