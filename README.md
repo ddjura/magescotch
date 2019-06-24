@@ -19,7 +19,7 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Install the Vagrant plugins required by running: vagrant plugin install vagrant-hostmanager vagrant-auto_network
 - Clone the this MageScotch Ubuntu Box [GitHub Repository](https://github.com/ddjura/magescotchubuntu) or Download ZIP if you don't want to contribute to the repo
 - Edit local-bootstrap.sh and replace the name and email address with your information and desired admin user
-- Run `vagrant up` (ON windows run `vagrant up --provisioner virtualbox`
+- Run `vagrant up` (ON windows run `vagrant up --provider virtualbox`
 - If website slow: Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
    try this:
        phpmemory_limit=-1;find -iname 'php.ini' -exec sed -i 's/memory_limit = .*/memory_limit = '${phpmemory_limit}'/' {} \;
