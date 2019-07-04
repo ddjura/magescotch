@@ -20,10 +20,6 @@ Magescotch is built for general purpose use, but began with conferences and trai
 - Clone the this MageScotch Ubuntu Box [GitHub Repository](https://github.com/ddjura/magescotchubuntu) or Download ZIP if you don't want to contribute to the repo
 - Edit local-bootstrap.sh and replace the name and email address with your information and desired admin user
 - Run `vagrant up` (ON windows run `vagrant up --provider virtualbox`
-- If website slow: Run `vagrant ssh` and find all php.ini files `sudo find \ -name "php.ini"` . Change memory_limit to -1.
-   try this:
-       phpmemory_limit=-1;find -iname 'php.ini' -exec sed -i 's/memory_limit = .*/memory_limit = '${phpmemory_limit}'/' {} \;
-  Restart reload php-fpm and apache2 `sudo service php7.0-fpm restart && sudo service apache2 restart`
 - Move out magento cron jobs from root cron tab into vagrant user crontab and set permission again (see Issues section) 
 - Access Magento 2 at [http://192.168.33.10/magento2/](http://192.168.33.10/magento2/)
 - Access Magento 2 backend at [http://192.168.33.10/magento2/adminpanel](http://192.168.33.10/magento2/)
@@ -36,26 +32,15 @@ Magescotch is built for general purpose use, but began with conferences and trai
 
 
 ## Issues
-Some common issues listed here, if you have more questions please contact me at ddjura87@gmail.com
+Some common issues listed here, if you have more questions please contact me at ddjura87@gmail.com or trough my website www.markodurasic.com :
 - If permission issues then reference this:
 http://devdocs.magento.com/guides/v2.0/install-gde/prereq/file-system-perms.html
-- If pages loading too slow:
-alias mage="php -d memory_limit=-1 -f bin/magento" 
 
-chmod -R 775 pub/static/ var/ pub/media/ &&
-rm -rf var/view_preprocessed/ var/cache/ var/page_cache/ var/tmp/ var/generation/ pub/static/frontend/ ;
-mage cache:clean &
-mage cache:flush &
-mage indexer:reindex &
-mage setup:upgrade &&
-mage setup:static-content:deploy ; mage setup:static-content:deploy -f;
-mage setup:db-data:upgrade &&
-mage dev:source-theme:deploy &&
-chmod -R 775 pub/static/ pub/media/ var/
 
-- If memory used up by pending cronjob, temporary solution which os ok for local environemnt would be adding this to crontab as file system user:
+- If memory used up by pending cronjob,that is because the email are trying to be sent but the email server is not set, so pending jobs would ba accumuluated..Temporary solution which os ok for local environemnt would be adding this to crontab as file system user:
 */2 * * * * /usr/bin/mysql -u dev -pdev -e "truncate magento2.cron_schedule"
 
+- Cron tab permission issues, by default the root cron tab is set for magento cron jobs, so move it out of the root cron tab into vagrant user cron tab. As vagrant is the file system owner.
 
 ## Common Tasks
 
