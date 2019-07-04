@@ -6,7 +6,7 @@
 
 This is the PHP 7-based version of Magescotch. 
 
-This environment is based on the Vagrant base box Magemalt. To request new software to be added, please open an issue on the [Magemalt repository](https://github.com/joshuaswarren/magemalt).
+This environment is based on the Vagrant base box Magemalt. 
 
 Magescotch is designed to allow you to experiment with Magento. While sample installations of M2 is setup for you, the main purpose of the environment is to give you a place to work on your own projects.
 
