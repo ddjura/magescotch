@@ -17,6 +17,6 @@ echo "Running local bootstrap file."
 
 adduser vagrant www-data
 cd /var/www/public/magento2/ && php bin/magento deploy:mode:set developer
-php bin/magento admin:user:create --admin-user='marko' --admin-password='acer123' --admin-email='marko.durasic@acer.com' --admin-firstname='Marko' --admin-lastname='Durasic'
+php bin/magento admin:user:create --admin-user='admin' --admin-password='admin123' --admin-email='youremail@email.com' --admin-firstname='John' --admin-lastname='Smith'
 chmod -R 777 /var/www/public/magento2
 echo "Completed local bootstrap file."
